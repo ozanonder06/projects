@@ -1,0 +1,130 @@
+1) Tokens file is edited with float and repeat symbols and their id names.
+
+2)TokenSetup file was runned to generate the new symbols.
+
+3)visitor package are edited. Abstract classes of visitFloatTree, FloatTree
+,visitFloatTypeTree, repeatTree and visitRepeatTree are added and implemented.
+
+4)Codegen and Contrain imports and their uses were deleted in the Compiler class.
+
+5)In Parser class, rStatement method was editted to handle the "repeat" reserve word.
+It expects a block, then a while statement.
+
+6)In Parser class, rFactor() method was editted, therefore, it can handle
+if it sees the next token as a float. Then It generates a Float Tree.
+
+7)Jar File is created
+
+8)There is an interesting problem. After I create the JAR file, 
+somtimes the program doesnt execute and throws an exception. However, after
+I run the same program in my other compiler(called jgrasp) then when I execute
+the program in NetBeans again(WITHOUT ANY CHANGE), the program executes successufly.?? I have no idea why?
+
+9)Another issue is that I had to take the java files out of their src files in order to
+have them import other packages. Otherwise, they simply state that the packages 
+do not exist.
+
+10)SourceReader and Token classes were modified in order to remove the Token Printouts. 
+
+
+11)The test case was copied to the file, "test" and tested successfully. 
+The Output is:
+
+program 
+{
+  float i
+  repeat
+  {
+    float factorial(int n) 
+    { 
+       return 1.0 
+    }
+    repeat 
+    {
+       repeat  
+       {
+       }while 7.5
+    }   while 5
+  } while true 
+}
+
+run:
+---------------TOKENS-------------
+Source file: test.x
+user.dir: C:\Documents and Settings\ozan\My Documents\NetBeansProjects\compiler
+1program 
+2       program
+3{
+4       {
+5  float i
+6       float
+7       i
+8  repeat
+9       repeat
+10  {
+11       {
+12    float factorial(int n) 
+13       float
+14       factorial
+15       (
+16       int
+17       n
+18       )
+19    { 
+20       {
+21       return 1.0 
+22       return
+23       1.0
+24    }
+25       }
+26    repeat
+27       repeat
+28    {
+29       {
+30      repeat
+31       repeat
+32      {
+33       {
+34      }while 7.5
+35       }
+36       while
+37       7.5
+38      
+39    }while 5.5
+40       }
+41       while
+42       5.5
+43
+44
+45  }while true
+46       }
+47       while
+48       true
+49}
+50       }
+---------------AST-------------
+1:  Program
+2:    Block
+5:      Decl
+3:        FloatType
+4:        Id: i
+6:      Repeat
+7:        Block
+10:         FunctionDecl
+8:            FloatType
+9:            Id: factorial
+11:           Formals
+14:             Decl
+12:               IntType
+13:               Id: n
+15:           Block
+16:             Return
+17:               Id: 1.0
+18:         Repeat
+19:           Block
+20:             Repeat
+21:               Block
+22:               Id: 7.5
+23:           Id: 5.5
+24:       Id: true
+BUILD SUCCESSFUL (total time: 0 seconds)

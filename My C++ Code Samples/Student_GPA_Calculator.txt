@@ -1,0 +1,138 @@
+/******************************************
+/ozan gazi onder homework6 Question 1
+/student class that reads and writes the student data
+/then calculates the average GPA*********/
+
+
+#include<iostream>
+#include<fstream>
+#include<cstring>
+#include<iomanip>
+#define W setw
+
+using namespace std;
+
+class student
+{
+      private:
+         char first[20], last[20];//student name
+         int age;//student age
+         double gpa;//student gpa
+      public:
+             student();
+             int readFile(ifstream &);//reads data from student.dat
+             void writeFile(ofstream &);//writes the data to the file
+             void show();//display student data
+             int read();//reads student data from the user
+             double getGpa();//returns student's gpa
+};
+//Implementions of the methods
+
+student::student() {gpa = 0.;}//constructor with intilialized gpa
+
+int student::readFile(ifstream &IS)
+{
+    IS>>first>>last>>age>>gpa;
+      return !IS.eof();//detects if its the end of file
+}
+
+void student::writeFile(ofstream &OS)
+{
+    OS<<W(10)<<first<<W(4)<<last<<W(10)<<age<<W(5)<<gpa<<endl;
+}    
+    
+double student::getGpa()
+{
+       return gpa;
+}       
+
+void student::show()
+{
+     cout<<W(10)<<first<<W(4)<<last<<W(10)<<age<<W(5)<<gpa<<endl;
+}
+     
+int student::read()
+{ 
+    //for some reason ctrl^Z causes my program to crush
+    //thats why, I used value 0 in age as a sentinel value
+    cout<<"\nEnter first name: "; cin>>first;
+    cout<<"\nEnter last name: "; cin>>last;
+    cout<<"\nEnter student age(type 0 to quit): "; cin>>age;
+    cout<<"\nEnter GPA: "; cin>>gpa; 
+    return (age>0);
+}    
+     
+//MAIN PROGRAM     
+int main()
+{
+    student list[20], s[20];//arrays of students
+    int n = 0;
+    double totalGPA = 0., averageGPA;//gpa accumulator
+    
+    ofstream OUTPUT("student.dat", ios::out);
+    while(list[n].read())//reads data from the user by calling read()method
+    {
+        list[n].writeFile(OUTPUT);//writes the data to student.txt
+        n++;
+    }    
+    OUTPUT.close();
+    
+   int x =0;
+   ifstream IS("student.dat", ios::in);
+   while(s[x].readFile(IS))//reads the file
+   {
+      s[x].show();
+      totalGPA += s[x].getGpa();//adds GPA
+      x++; 
+   } 
+   IS.close();
+   averageGPA = totalGPA/x;//calculates the average GPA
+   cout<<"\n\nAverge GPA: "<<averageGPA<<endl;
+
+   system("pause");
+   return 0;
+}  
+
+
+
+****************************************
+
+
+Enter first name: alex
+
+Enter last name: miller
+
+Enter student age(type 0 to quit): 22
+
+Enter GPA: 3.2
+
+Enter first name: egemen
+
+Enter last name: ege
+
+Enter student age(type 0 to quit): 25
+
+Enter GPA: 3.70
+
+Enter first name: burak
+
+Enter last name: guler
+
+Enter student age(type 0 to quit): 19
+
+Enter GPA: 2.2
+
+Enter first name: ozan
+
+Enter last name: onder
+
+Enter student age(type 0 to quit): 0
+
+Enter GPA: 0
+alexmiller  22         3  0.2
+    egemen ege        25  3.7
+burakguler  19         2  0.2
+
+
+Averge GPA: 1.36667
+Press any key to continue . . .

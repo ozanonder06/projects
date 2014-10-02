@@ -1,0 +1,44 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    char textFile[] = "oldFile.txt"; //the file that program copies from
+    int n = 1; //line numbers starting from 1
+    string text;
+    
+    ifstream IS(textFile, ios::in);//input file stream
+    
+    
+    if(IS.fail())
+         cout<<"the file does not exist!!"<<endl;//the program checks if the file exists
+    else
+    {
+       ofstream OS("newFile.txt", ios::out);//copies in to a text file called newFile
+       
+       while(getline(IS, text))//get line from the input stream and put it into text
+       {
+          OS <<n<<":  "<<text<<endl;
+          n++;//increment the line number
+       }   
+    
+       //close the files
+       IS.close();
+       OS.close();               
+    }
+ getchar();    
+ return 0;    
+}
+    
+*****************************************
+New File
+
+1:  this file is a good file
+2:  because it can be copied
+3:  and added line numbers
+4:  to the new file with c++
+5:  fOR THAT REASON
+6:  I LOVE PROGRAMMING

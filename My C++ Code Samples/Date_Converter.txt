@@ -1,0 +1,53 @@
+//Question 1:PART 2
+
+#include<iostream>
+#include<string>
+#include<iomanip>
+
+using namespace std;
+    
+int main()//date conversion with using string class
+{
+ string date, month, year;
+ cout<<"\n\nEnter a date in MM/DD/YY format: "; cin>>date;
+ 
+ //program checks out the first two digits of the string
+ //to find the month by using substring
+ if(date.substr(0,2)== "01") month = "January";
+ else if(date.substr(0,2)== "02") month = "February";
+ else if(date.substr(0,2)== "03") month = "March";
+ else if(date.substr(0,2)== "04") month = "April";
+ else if(date.substr(0,2)== "05") month = "May";
+ else if(date.substr(0,2)== "06") month = "June";
+ else if(date.substr(0,2)== "07") month = "July";
+ else if(date.substr(0,2)== "08") month = "August";
+ else if(date.substr(0,2)== "09") month = "September";
+ else if(date.substr(0,2)== "10") month = "October";
+ else if(date.substr(0,2)== "11") month = "November";
+ else if(date.substr(0,2)== "12") month = "December";
+ else month = "ERROR";
+ 
+   //Program analizes the year. If the last digits are greater then 12 then 
+  //it assumes that the date belongs to 20th century
+  int first = date[6] - '0';
+  int second = date[7]-'0';
+  if((first>1) && (second>2)) year= "19"; 
+  else  year = "20";
+  
+  cout<<"\n\n"<<month<<" "<<date.substr(3,2)<<", "<<year<<date.substr(6,2)<<endl;
+ 
+
+ system("pause");   
+ return 0;    
+}
+
+
+
+***********************************
+
+Enter a date in MM/DD/YY format: 01/12/87
+
+
+January 12, 1987
+Press any key to continue . . .
+    

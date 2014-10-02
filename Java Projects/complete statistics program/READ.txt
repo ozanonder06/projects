@@ -1,0 +1,3 @@
+Although Only Histogram.class is necessary to make the program run in html file
+when you are uploading to a FTP to put it online, you need to upload all the class
+files to FTP

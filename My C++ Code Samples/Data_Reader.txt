@@ -1,0 +1,110 @@
+//Question 4
+
+
+#include<iostream>
+#include<fstream>
+#include<iomanip>
+
+#define W setw
+
+using namespace std;
+    
+int main()
+{
+    char file[] = "used.car";//file to create
+    
+    char manufacturer[20], model[20], again;//information of the used cars
+    int year, cost, miles;
+
+    ofstream OS(file, ios::out);
+    
+    cout<<"Create a list of used cars";
+    //get input from the user and write them to output file
+    do
+    {
+       cout<<"\n\nEnter Manufacturer: "; cin>>manufacturer;
+       cout<<"\nEnter Model: "; cin>>model;
+       cout<<"\nEnter Year: "; cin>>year;
+       cout<<"\nEnter Miles: "; cin>>miles;
+       cout<<"\nEnter Cost: "; cin>>cost;
+       
+       //pressing control and z cause my program to crush. thats why the program
+       //quits with the letter n
+       cout<<"\nPress n to qquit (y/n):  "; cin>>again;//to quit the input process
+       
+       OS<<W(10)<<manufacturer<<W(10)<<model<<W(10)<<year<<W(10)<<miles<<W(10)<<cost<<endl;
+        
+    }while(again!= 'n'); 
+    
+    OS.close(); 
+    
+    ifstream IS(file, ios::in);//creates input file stream
+    
+    cout<<"\n\nCars whose miles are less than 50000 and cheaper than 9000$\n\n";
+    
+    while(IS>>manufacturer>>model>>year>>miles>>cost)
+    {
+       if((miles < 50000) && (cost < 9000))//checks the cars and list them
+       {
+          cout<<W(10)<<manufacturer<<W(10)<<model<<W(10)<<year<<W(10)<<miles<<W(10)<<cost<<endl;
+       }
+    }  
+    
+    IS.close(); //closes the input file stream   
+     
+       
+        
+
+ system("pause");    
+ return 0;    
+}
+    
+******************************************************
+
+Create a list of used cars
+
+Enter Manufacturer: Mercedes
+
+Enter Model: Benz
+
+Enter Year: 1997
+
+Enter Miles: 100000
+
+Enter Cost: 20000
+
+Press n to qquit (y/n):  y
+
+
+Enter Manufacturer: Honda
+
+Enter Model: civic
+
+Enter Year: 2000
+
+Enter Miles: 30000
+
+Enter Cost: 5000
+
+Press n to qquit (y/n):  y
+
+
+Enter Manufacturer: Tofas
+
+Enter Model: Sahin
+
+Enter Year: 1996
+
+Enter Miles: 45000
+
+Enter Cost: 6000
+
+Press n to qquit (y/n):  n
+
+
+Cars whose miles are less than 50000 and cheaper than 9000$
+
+     Honda     civic      2000     30000      5000
+     Tofas     Sahin      1996     45000      6000
+Press any key to continue . . .
+

@@ -1,0 +1,117 @@
+/**********************************
+*HOMEWORK 7 Question 3
+*Master program that takes the argumens
+/to find x1 and x2 of a quadratic equation
+*Ozan Gazi Onder
+***********************************/
+
+#include<iostream>
+#include<fstream>
+#include<math.h>
+using namespace std;
+
+// This program returns a concatenated string a+b
+// stored in a static buffer hidden inside the program
+char *AddStr(char *a, char *b, char *c) // return a+b+c
+{    static char buffer[50];
+     char *p = buffer;
+     while(*p++ = *a++);  // copy
+     p--;
+     while(*p++ = *b++);  // append
+     p--;
+     while(*p++ = *c++);  // append
+     return buffer;
+}
+
+int main(void)   //  MASTER PROGRAM
+{
+   double x1, x2, a, b, c, rootDelta, delta;
+   char  *infile    = "EngineInput.dat ",  // Input API file
+         *outfile   = "EngineOutput.dat ", // Output API file
+         *engine    = "16.4.ENGINE2 ";     // Engine program name
+   
+  //reads data from the use.
+  cout<<"Enter a b and c: ";//componenets of quadratic equation
+  cin>>a>>b>>c;
+
+   // Prepare the input file file
+   ofstream OS(infile, ios::out);
+   OS<<a<<" "<<b<<" "<<c;//store the data to EngineInput.dat
+   OS.close();
+                                           // Create command in a hidden
+   system(AddStr(engine, infile, outfile));// buffer and execute
+ 
+   ifstream IS(outfile, ios::in);          // Open file with results
+   IS >> x1 >> x2;                      // Read results of quadratic equation
+   IS.close();
+
+   cout << "\nx1     = " << x1           // Show results
+        << "\nx2     = " << x2 << "\n\n";
+ 
+   system("pause");
+   return 0;
+}
+
+
+
+******************************************
+
+
+#include<iostream>
+#include<fstream>
+#include<math.h>
+using namespace std;
+
+int main(int argcnt, char *argvec[])//engine program
+{  
+   double x1, x2, a, b, c, rootDelta, delta;//variables of equation
+
+                 //==================
+   if (argcnt<2) // No commang line arguments.(user prompt)
+   {             //==================
+     //reads data from the user
+     cout<<"Enter a b and c: ";
+      //finds x1 and x2
+      //by using quadratic formula
+      delta= pow(b, 2.0)-(4*a*c);
+      delta = sqrt(delta);
+      b *= -1;
+      x1 = (b + delta)/(2*a);
+      x2 = (b - delta)/(2*a); 
+
+     cout << "\nx1     = " << x1 
+          << "\nx2 = " << x2 << "\n\n";
+     system("pause");
+     return 0;  
+   }                  
+           //===============================================
+   else    // command line arguments. program displays the results.
+   {       //===============================================
+     ifstream IS(argvec[1], ios::in); // Open the input file
+     IS>>a>>b>>c;                   // Read arguments
+      //calculate x1 and x2
+      delta= pow(b, 2.0)-(4*a*c);
+      delta = sqrt(delta);
+      b *= -1;
+      x1 = (b + delta)/(2*a);
+      x2 = (b - delta)/(2*a); 
+       
+     ofstream OS(argvec[2], ios::out);  // Deliver results
+     OS << x1 << "  " << x2 << endl;
+     OS.close();
+     return 0;
+   }
+}
+
+*************************************************
+
+Enter a b and c: 12
+34
+56
+'16.4.ENGINE2' is not recognized as an internal or external command,
+operable program or batch file.
+
+x1     = 1.6978e-313
+x2     = 1.68097e-307
+
+Press any key to continue . . .

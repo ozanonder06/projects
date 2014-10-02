@@ -1,0 +1,38 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int FiboTest(int n)
+{
+    int i=0;
+    int j=1;
+    int found = 0;//becomes 1 if n is a fibanocci number
+    
+    while(i<=n || j<=n)
+    {
+       if((i==n) || (j==n))
+          found = 1;//the number is found
+
+       i=i+j;
+       j=i+j;
+       
+     }//end of while
+   return found;
+}//end of fiboTest
+            
+int main()
+{
+   int testValue = 21;
+   if(FiboTest(testValue)==1)
+     cout<<testValue<<" is a fibanocci number"<<endl;
+     
+     system("PAUSE");
+     return 0;
+} 
+
+
+
+************************
+21 is a fibanocci number
+Press any key to continue . . .
+   

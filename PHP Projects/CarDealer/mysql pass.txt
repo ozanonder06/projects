@@ -1,0 +1,10 @@
+nomral pass: abc
+generated pass: yDtBqEJ8b2zxLvb8
+
+
+
+db name = student_oonder
+host = localhost
+user = root
+port=3306
+this wroks: swimmer06

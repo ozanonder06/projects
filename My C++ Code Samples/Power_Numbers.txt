@@ -1,0 +1,70 @@
+#include<iostream>
+#include<math.h>
+#include<iomanip>
+
+using namespace std;
+
+//power function of 2
+int power(int n)
+{
+    int sum = 1;
+    for(int i = 0; n>= 0 && i < n; i++)
+    {
+          sum *= 2; 
+    }
+    return sum;
+}//end of the function    
+  
+int main()
+{
+    //in 32 bit system
+    //the MAX number is 2^(32-1)-1
+    //therefore, the number that is greater than this result will cause
+    //an integer overflow
+    for(int i = 0; ; i++)
+    {
+        if(i == 31) break; //this will be the overflow limit
+        cout << setw(4) << i << setw(12) << power(i) << endl;
+    }
+        
+      system("PAUSE");
+      return 0;
+}//end of the program    
+
+
+
+********************************
+
+
+   0           1
+   1           2
+   2           4
+   3           8
+   4          16
+   5          32
+   6          64
+   7         128
+   8         256
+   9         512
+  10        1024
+  11        2048
+  12        4096
+  13        8192
+  14       16384
+  15       32768
+  16       65536
+  17      131072
+  18      262144
+  19      524288
+  20     1048576
+  21     2097152
+  22     4194304
+  23     8388608
+  24    16777216
+  25    33554432
+  26    67108864
+  27   134217728
+  28   268435456
+  29   536870912
+  30  1073741824
+Press any key to continue . . .

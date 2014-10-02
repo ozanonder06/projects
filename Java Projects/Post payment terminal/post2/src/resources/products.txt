@@ -1,0 +1,11 @@
+0001     Chips                             1.00
+0002     Bread                             2.50
+0003     Apple                             0.60
+0004     Orange                            0.55
+0005     Cheese                            3.99
+0006     Ham                               2.99
+0007     Yogurt                            0.50
+0008     Sushi                             4.99
+0009     Cigarettes                        7.00
+0010     Can of Soda                       0.85
+0011     Coffee                            4.99

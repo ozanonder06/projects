@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<makes>
+    <car make="audi" pos="A"/> 
+    <car make="mitsubishi" pos="A"/> 
+    <car make="maserati" pos="A"/>  
+    <car make="jaguar" pos="A"/>
+	<car make="bmw" pos="B"/>
+    <car make="chrysler" pos="C"/> 
+    <car make="mercedes benz" pos="D"/>    
+    <car make="ford" pos="F"/>
+    <car make="subaru" pos="F"/>
+    <car make="ferrari" pos="F"/>
+    <car make="chevrolet" pos="G"/>
+    <car make="gm" pos="G"/> 
+    <car make="honda" pos="H"/>
+    <car make="hyundai" pos="M"/> 
+    <car make="nissan" pos="N"/>
+    <car make="kia" pos="N"/>
+    <car make="nissan" pos="N"/>
+    <car make="toyota" pos="N"/>
+    <car make="ford" pos="N"/>
+    <car make="porsche" pos="P"/>
+    <car make="suzuki" pos="S"/>
+    <car make="subaru" pos="S"/>   
+    <car make="toyota" pos="T"/>
+    <car make="volkswagen" pos="V"/>
+    <car make="volvo" pos="V"/>  
+    <car make="mazda" pos="Y"/>
+    <car make="chevrolet" pos="8"/>
+    <car make="acura" pos="9"/>
+
+</makes>

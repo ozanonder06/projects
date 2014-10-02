@@ -1,0 +1,90 @@
+/*Ozan Gazi ONDER********************
+/Homework 5. Question1
+/computer selects a random number and asks the users to guess
+/then the user selects a random number
+/*****************************************/
+
+#include<iostream>
+#include<string>
+#include<cstring>
+#include <ctime>    
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+    srand(time(0)); 
+    int number = (rand() % 20) + 1;//computer selects a random number between 1 and 20
+    int guess;
+    int i = 0;
+    int start = 1;
+    int end = 20;
+    string answer;
+    do//user repeats guessing until finding the correct value
+    {
+        cout<<"\n\nGuess the number I selected(1-20): "; cin>>guess;
+        if(number < guess) cout<<"\nToo big!!"<<endl;
+        else if(number > guess) cout<<"\nToo small!!"<<endl;
+        
+        i++;//counts the number of guesses
+     }while(number!= guess);
+     
+     cout<<"CORRECT!! You tried "<<i<<" times\n\n"<<endl;   
+     cout<<"Now its my turn to guess"<<endl;
+     
+     //program waits for the user to select a random number between 1 and 20
+     cout<<"Please press enter when you select a number(1-20)"; system("pause"); 
+     cout<<"if my guess is smaller than your selection, type bigger "<<endl;
+     cout<<"if my guess is bigger than your selection, type smaller"<<endl;
+     cout<<"if my guess equals to your selection, type yes\n\n"<<endl;
+     
+    
+     do
+     {
+          int number = (rand() % end) + start;//computer generates a random number to guess
+          cout<<"\nIs the number "<<number<<" ?"; cin>>answer;
+          
+          if(answer == "smaller")
+              end = number;//generates a smaller number
+          if(answer == "bigger") 
+              start= number;//generates a greater number
+     }while(answer != "yes");     //terminates the loop if the answer is yes
+          
+system("pause"); 
+ return 0;    
+}
+    
+*********************************************************
+
+
+Guess the number I selected(1-20): 15
+
+Too big!!
+
+
+Guess the number I selected(1-20): 10
+
+Too small!!
+
+
+Guess the number I selected(1-20): 12
+CORRECT!! You tried 3 times
+
+
+Now its my turn to guess
+Please press enter when you select a number(1-20)Press any key to continue . . .
+
+if my guess is smaller than your selection, type bigger
+if my guess is bigger than your selection, type smaller
+if my guess equals to your selection, type yes
+
+
+
+Is the number 13 ?smaller
+
+Is the number 13 ?smaller
+
+Is the number 4 ?bigger
+
+Is the number 5 ?yes
+Press any key to continue . . .

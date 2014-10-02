@@ -1,0 +1,98 @@
+//QUESTION: 2
+
+#include<iostream>
+#include<time.h>
+#include<math.h>
+#include<cstdlib>
+#include<ctime>
+
+#define N 50000 // Array size
+#define K 3000
+
+using namespace std;
+
+//the function, calculates the time measurement in seconds
+double sec(void)
+{
+       return double(clock())/CLOCKS_PER_SEC;
+}       
+
+//Computes the sum of the specified array's values
+//iteratively
+double iterativeSum(double a[], int n)
+{
+    double sum = 0.;
+    for(int i = 0; i<n; i++)
+       sum += a[i];
+    
+    return sum;
+}       
+
+//computes the sume of the specified array's values
+//recursively
+double recursiveSum(double a[], int n, double sum = 0.0)
+{
+    if(n==0) return sum;
+    else
+     sum += a[n-1];
+     
+    return recursiveSum(a, n-1, sum);
+}    
+        
+
+
+int main()
+{
+    double t1, t2, t3;//time measuements
+    double a[N];
+    double sum1, sum2;
+    
+    //for generating seed
+    srand(time(0));
+    
+    for(int i=0; i<N; i++)
+    {
+       //fill the array with random double values
+       //between 0 and 1 exclusively
+       a[i]= double(rand()%9+ 1)/10.0;
+    }
+    t1 = sec();
+    
+    //calculation with iterativeSum
+    for(int j=0; j<K; j++)
+        iterativeSum(a, N); 
+    
+    t2 = sec();    
+    
+    
+    //calculation with recursiveSum   
+    for(int j=0; j<K; j++)   
+        recursiveSum(a, N, 0);
+    
+    t3 = sec();
+    
+    //prove that iterative and recursive calculations generate
+    //the same result
+    sum1 = iterativeSum(a, N); 
+    sum2 = recursiveSum(a, N, 0);
+    cout<<"Iterative Sum is: "<<sum1<<"\nRecursive Sum is: "<<sum2<<"\n\n";
+    cout<<"Iterative Sum time: "<<t2-t1<<" sec";
+    cout<<"\nRecursive Sum time: "<<t3-t2<<" sec"<<endl;
+
+    
+system("pause");    
+return 0;    
+}
+
+
+    
+
+************************
+
+Iterative Sum is: 25014.4
+Recursive Sum is: 25014.4
+
+Iterative Sum time: 1.343 sec
+Recursive Sum time: 6.313 sec
+Press any key to continue . . .
+    

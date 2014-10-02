@@ -1,0 +1,40 @@
+/*Ozan Gazi ONDER********************
+/Homework 5. Question2(INCOMPLETE)
+/The program opens random.dat and saves 200 integers
+/each of which is sum of 12 random integers
+/Since we didnt start studying system command
+/I made this program for a partial credit
+/*****************************************/
+
+#include<iostream>
+#include<fstream>
+#include<cstring>
+#include <ctime>    
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+    char file[] = "random.dat";
+    
+    int a[12];
+    int sum;
+    
+    srand(time(0)); //for random values
+    ofstream OS(file, ios::out);//creates the file 
+    
+    for(int i = 0; i<200;i++)
+    {
+            sum = 0;
+            for(int j = 0;j < 12;j++)
+            {
+                    a[j] = (rand() % 9) + 1;//assigns random inetegers
+                    sum += a[j];
+            }
+            OS<<sum<<" ";  
+    }        
+    OS.close();     
+    
+    system("pause");
+    return 0;
+}    

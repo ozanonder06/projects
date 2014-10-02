@@ -1,0 +1,104 @@
+/*Ozan Gazi ONDER********************
+/Homework 5. Question3
+/reads and Calculates students' ages and grades
+/*****************************************/
+
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<cstring>
+#include<math.h>
+using namespace std;
+
+
+//the function calculates the standart deviation of an array of integers
+//where n is the size of the array, and mean is the given mean value
+double standardDeviation(double a[], int n, int mean, double sum = 0.)
+{
+     double result, finalResult;
+     for(int i=0; i<n; i++)
+	 {
+	     double x = a[i]-mean;
+	     sum += pow(x, 2);
+     }
+	 result = sum/(n-1);
+	 finalResult = sqrt(result);
+	 
+	 return finalResult;
+}	
+
+
+
+int main()
+{
+    char s[20];
+    double grade;
+    int month, day, year;
+    int age, totalAge = 0, meanAge;
+    double totalG = 0., meanG;
+    double ageArray[100];
+    double score[100];
+    
+    int i = 0;//student counter
+    
+    //date struct with thre componenets
+    struct Date
+    { int month;
+      int day;
+      int year;
+    } ;
+    
+    //Main struct students inludes Date
+    struct Student
+    { string name;
+      Date dob;
+      double GPA;
+    } S[200];
+    
+
+   char file[] = "students.txt";//the text file of student data
+   ifstream IS(file, ios::in);//creates input file stream from student.txt
+   
+      while(IS>>s>>month>>day>>year>>grade)//read data from the file
+      {
+            Date d = {month, day, year}; 
+            Student x = {s, d, grade};  //add the components to the struct 
+            S[i] = x;//crate the array
+            age = 2012 - year;
+            totalAge += age;
+            totalG += grade;
+            
+            //following arrays will be used for st. deviation
+            ageArray[i] = age;
+            score[i] = grade;
+  
+            i++;                          
+                                           
+      }
+      meanAge = totalAge / i;//mean value of students' ages
+      meanG = totalG / i;//mean value of GPA
+      double sdAge = standardDeviation(ageArray, i, meanAge);//calculates st devaiation
+      double sdGpa = standardDeviation(score, i, meanG);
+      cout<<"mean age is "<<meanAge<<endl;
+      cout<<"standard deviation of age: "<<sdAge<<endl;
+      cout<<"Coefficient variation of age: "<<sdAge/meanAge<<endl;
+      cout<<"\nmean GPA is "<<meanG<<endl;
+      cout<<"standard deviation of GPA: "<<sdGpa<<endl;
+      cout<<"Coefficient variation for GPA "<<sdGpa/meanAge<<endl;
+      
+
+ system("pause");    
+ return 0;    
+}
+
+
+*************************************************
+
+mean age is 24
+standard deviation of age: 1.93649
+Coefficient variation of age: 0.0806872
+
+mean GPA is 3.1
+standard deviation of GPA: 0.47697
+Coefficient variation for GPA 0.0198737
+Press any key to continue . . .

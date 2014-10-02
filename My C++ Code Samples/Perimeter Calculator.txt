@@ -1,0 +1,88 @@
+/*//Ozan Gazi Onder. CSC30 homework 6: (2)
+/ The program reads the input from the file
+/and calculates perimeter and area.//////*/
+
+#include<iostream>
+#include<iomanip>
+#include<fstream>
+#include<cstring>
+#include<math.h>//for math calculations
+#define W setw
+using namespace std;
+
+//class triangle.reads input and calculates perimeter and area
+class triangle
+{
+   private:
+     int a,b,c, perimeter;//sides of triangle and perimeter
+     double area, s;
+     
+   public:
+     triangle();//constructor
+     int readFile(ifstream &);//reads the data from the file
+     void show();//displays the sides, perimeter and area of triangle
+     bool isequilateral();//returns true if all sides are equal
+};
+
+triangle::triangle(){}
+
+int triangle::readFile(ifstream &IS)
+{
+    IS>>a>>b>>c;//reads the input from file
+    return !IS.eof();
+}    
+
+void triangle::show()
+{
+    perimeter = a + b + c;
+    s = perimeter/2.;//semiperimeter
+   double value1=s-a, value2=s-b, value3=s-c;
+   //calculates the area
+   area=sqrt(s*value1);
+   
+   //displays the results
+   cout<<"\nsides of triangle: "<<a<<" "<<b<<" "<<c<<endl;
+   cout<<"Perimeter: "<<perimeter<<endl;
+   cout<<"Area: "<<area<<endl;
+}  
+
+bool triangle::isequilateral()
+{
+     bool result = false;
+     if((a==b)&&(b==c))//checks if the sides are equal
+         result= true;
+     return result;//returns true or false
+}    
+
+int main()
+{
+    triangle t[10];
+    ofstream OS("triangle.dat", ios::out);//creates the file with given data
+    OS<<10<<W(5)<<17<<W(5)<<8<<2<<W(5)<<13<<W(5)<<13<<W(5)<<13<<endl;
+    OS.close();
+    
+    ifstream IS("triangle.dat", ios::in);
+    int n = 0;
+    while(t[n].readFile(IS)) n++;//reads data
+    t[0].show();
+    t[1].show();
+    if(t[1].isequilateral())//checks if all the sides are equal
+       cout<<"trinagle is equilateral"<<endl;
+    system("pause");
+    return 0;
+}    
+
+
+
+***************************************
+
+
+sides of triangle: 10 17 82
+Perimeter: 109
+Area: 49.2468
+
+sides of triangle: 13 13 13
+Perimeter: 39
+Area: 11.2583
+trinagle is equilateral
+Press any key to continue . . .

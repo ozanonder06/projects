@@ -1,0 +1,95 @@
+//HOMEWORK 2
+
+#include<iostream>
+#include<fstream>
+#include<cctype>
+#include<cstring>
+
+using namespace std;
+
+//since we are required to write each function, 
+//I made 3 different functions that calculates
+//number of uppercase, lowercase an digit of
+//a given char array respectively
+
+
+      
+
+//this function calculates the number of upper case letters
+//recursively and returns as an int
+int numberOfUpper(char text[],int n, int sum = 0)
+{
+    if (n<0) return sum;
+    else
+    {
+        if('A'<= text[n-1] && text[n-1] <= 'Z')  sum++;//letter check
+        
+        return numberOfUpper(text, n-1, sum);//return the function
+    }
+}
+    
+    
+//this function calculates the number of lower case letters
+//recursively and returns as an int
+int numberOfLower(char text[],int n, int sum = 0)
+{
+    if (n<0) return sum;
+    else
+    {
+        if('a'<= text[n-1] && text[n-1] <= 'z')  sum++;//letter check
+        
+        return numberOfLower(text, n-1, sum);//return the function
+    }
+}
+
+//calculates the number of digits iteratively
+int numberOfDigits(char text[])
+{
+    int sum = 0;
+    
+    for(int i=0; text[i]; i++)
+    {
+       if('0' <= text[i] && text[i] <= '9') 
+        sum++;//check
+    }
+    return sum;
+}       
+       
+              
+               
+    
+
+int main()
+{
+ int n;
+ char s[60];
+ 
+ cout<<"Enter a line of text: ";
+ cin.getline(s, 60);//get line from keyboard
+ 
+ n = strlen(s);//lenght of the char array
+ 
+ cout<<"\n\n\nNumber of uppercase letters is: "<<numberOfUpper(s, n)<<endl;
+ cout<<"\nNumber of uppercase letters is: "<<numberOfLower(s, n)<<endl;
+ cout<<"\nNumber of digits is: "<<numberOfDigits(s)<<endl;
+ 
+ 
+
+ system("pause");   
+ return 0;    
+}
+    
+
+
+******************************************
+
+Enter a line of text: Even if you try, I ll beat you 555 times
+
+
+
+Number of uppercase letters is: 2
+
+Number of uppercase letters is: 25
+
+Number of digits is: 3
+Press any key to continue . . .

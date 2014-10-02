@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Generates the year-made of the car from the 10th letter/digit
+ of the vin number which is represented as ten_pos(10th position) attribute.
+ this file is valid for the car years between 2010-and 2039!!!!!
+-->
+
+<years>
+    
+    <car ten_pos="A">
+        <year>2010</year>
+    </car>
+    <car ten_pos="B">
+        <year>2011</year>
+    </car>
+    <car ten_pos="C">
+        <year>2012</year>
+    </car>
+    <car ten_pos="D">
+        <year>2013</year>
+    </car>
+    <car ten_pos="E">
+        <year>2014</year>
+    </car>
+    <car ten_pos="F">
+        <year>2015</year>
+    </car>
+    <car ten_pos="G">
+        <year>2016</year>
+    </car>
+    <car ten_pos="H">
+        <year>2017</year>
+    </car>
+    <car ten_pos="J">
+        <year>2018</year>
+    </car>
+    <car ten_pos="K">
+        <year>2019</year>
+    </car>
+    <car ten_pos="L">
+        <year>2020</year>
+    </car>
+    <car ten_pos="M">
+        <year>2021</year>
+    </car>
+    <car ten_pos="N">
+        <year>2022</year>
+    </car>
+    <car ten_pos="P">
+        <year>2023</year>
+    </car>
+    <car ten_pos="R">
+        <year>2024</year>
+    </car>
+    <car ten_pos="S">
+        <year>2025</year>
+    </car>
+    <car ten_pos="T">
+        <year>2026</year>
+    </car>
+    <car ten_pos="V">
+        <year>2027</year>
+    </car>
+    <car ten_pos="W">
+        <year>2028</year>
+    </car>
+    <car ten_pos="X">
+        <year>2029</year>
+    </car>
+    <car ten_pos="Y">
+        <year>2030</year>
+    </car>
+    <car ten_pos="1">
+        <year>2031</year>
+    </car>
+    <car ten_pos="2">
+        <year>2032</year>
+    </car>
+    <car ten_pos="3">
+        <year>2033</year>
+    </car>
+    <car ten_pos="4">
+        <year>2034</year>
+    </car>
+    <car ten_pos="5">
+        <year>2035</year>
+    </car>
+    <car ten_pos="6">
+        <year>2036</year>
+    </car>
+    <car ten_pos="7">
+        <year>2037</year>
+    </car>
+    <car ten_pos="8">
+        <year>2038</year>
+    </car>
+    <car ten_pos="9">
+        <year>2039</year>
+    </car>
+    
+</years>

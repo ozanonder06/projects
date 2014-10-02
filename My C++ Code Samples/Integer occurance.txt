@@ -1,0 +1,58 @@
+//QUESTION 1
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+
+//iterative function that counts the occurence of an
+//integer x. n is the size of array
+int OCCURS(int a[], int n, int x)
+{
+    int sum = 0; //number of occurence
+    for(int i = 0; i < n; i++)
+    {
+         if(a[i]==x)
+            sum++;
+    }        
+    return sum;
+    
+}  
+
+
+//the Recursion funcion that counts the occurence of an integer x
+// n is the size of array
+int OCCURSR(int a[], int n, int x, int sum = 0)
+{
+     if(n==0) return sum;
+     else if(a[n-1]==x)sum++;//detects if the number occurs
+     
+      return OCCURSR(a, n-1, x, sum);//calls the function recursively
+}    
+
+
+  
+
+int main()
+{
+int c[]={1, 3, 7, 9, 3, 5, 88, 5, 6, 2, 5, 4, 6, 3, 9, 1, 5, 7};
+int j = 5;//TEST number of the detection
+int n = 18;//number of lenght
+
+
+cout<<"number of occurence of "<<j<<" is: "<< OCCURS(c, n, j)<<endl;
+
+cout<<"\nnumber of occurence of "<<j<<" is: "<<OCCURSR(c, n, j)<<endl;
+
+
+
+system("pause");    
+return 0;    
+}
+    
+********************************
+
+number of occurence of 5 is: 4
+
+number of occurence of 5 is: 4
+Press any key to continue . . .

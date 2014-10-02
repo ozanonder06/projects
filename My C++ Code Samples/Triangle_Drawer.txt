@@ -1,0 +1,66 @@
+#include<iostream>
+#include<math.h>
+#include<iomanip>
+using namespace std;
+
+//draws a riangle with a desired size
+void triangle(int n)
+{    
+     //n must be an odd number
+     if(n%2==1)
+     {
+        int height = (n+1)/2;//height of the triangle
+        int r, c;//rows and coloumns
+        
+        for(r=1; r<=n; r++, cout<<endl)
+        {
+              for(c=1; c<=height; c++)
+              {
+                  //for upper part 
+                  if(r<height)
+                    cout<< ((r+c)>=height+1 || c==height ? '*' : ' ');
+
+                  //for the middle part
+                  else if(r==height)
+                     cout<< (r==height ? '*' : ' ');
+                  //for the lower part
+                  else if(r>height)
+                  {
+                      cout<< ((r-c)<=height-1 || c==height ? '*' : ' ');
+                  }
+              }
+         }//end of outer for
+     }//end of if
+}//end of the function                       
+
+int main()
+{
+   triangle(19);
+   system("PAUSE");
+   return 0;   
+}
+
+*********************************
+
+
+
+         *
+        **
+       ***
+      ****
+     *****
+    ******
+   *******
+  ********
+ *********
+**********
+ *********
+  ********
+   *******
+    ******
+     *****
+      ****
+       ***
+        **
+         *
+Press any key to continue . . .

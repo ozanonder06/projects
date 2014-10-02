@@ -1,0 +1,83 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+   //variables for the triangle
+   double a,b,c;
+   double areaTri, p;
+   //variables for the rectangle
+   double x,y;
+   double areaRect;
+   
+   
+   
+   for(; ;)
+   {
+     cout << "\n Enter three numbers for a triangle: \n";
+     cin >> a;
+     cin >> b;
+     cin >> c;
+     cout << "\n Enter two numbers for a rectange: \n";
+     cin >> x;
+     cin >> y;
+ 
+     //the program will terminate if one or more the inputs is
+     // zero or negative
+     if(a<=0 || b<=0 || c<=0 || x<=0 || y<=0)
+        break;
+   
+     //calculates the triangle by finding the half perimeter(p) first
+     p = (a + b + c)/2;
+     areaTri = sqrt(p*(p-a)*(p-b)*(p-c));
+   
+     //calculates the area of rectangle
+     areaRect = x * y; 
+     cout << "\n the area of the triangle is: " << areaTri << endl;
+     cout << "\n\n the area of the rectangle is: " << areaRect << endl;
+     
+     if(areaTri > areaRect)
+        cout <<"area of triangle is greater than the area of the rectangle" << endl;
+     else if(areaTri == areaRect)
+        cout <<"area of triangle is equal to the area of the rectangle" << endl;
+     else if(areaTri < areaRect)
+        cout <<"area of triangle is smaller than the area of the rectangle" << endl;
+  
+   }//end of foor loop        
+     
+      
+      
+     
+   return 0;
+}//end of the program 
+
+
+
+
+**************************
+
+ Enter three numbers for a triangle:
+32
+32
+56
+
+ Enter two numbers for a rectange:
+54
+67
+
+ the area of the triangle is: 433.774
+
+
+ the area of the rectangle is: 3618
+area of triangle is smaller than the area of the rectangle
+
+ Enter three numbers for a triangle:
+-1
+2
+2
+
+ Enter two numbers for a rectange:
+2
+2
+Press any key to continue . . .

@@ -1,0 +1,47 @@
+CREATE TABLE Car
+(
+   vin     nvarchar(17) NOT NULL,
+   seller  nvarchar(25) NOT NULL,
+   make    nvarchar(25) NOT NULL,
+   model   nvarchar(25) NOT NULL,
+   location   nvarchar(25) NOT NULL,
+   year    int (4) NOT NULL,
+   color   nvarchar(25) NOT NULL,
+   mil     int(20) NOT NULL,
+   trans   nvarchar(15) NOT NULL,
+   desciption    nvarchar(150) NOT NULL,
+   email   nvarchar(50) NOT NULL,
+   pic nvarchar(50) NOT NULL,
+
+   primary key(vin)
+);
+
+
+CREATE TABLE Car_Verify
+(
+   vin     nvarchar(17) NOT NULL,
+   isValid boolean NOT NULL,
+   
+   PRIMARY KEY(vin),
+   FOREIGN KEY (vin) REFERENCES Car(vin)
+   
+
+); 
+
+
+CREATE TABLE Deleted_Car
+(
+   vin     nvarchar(17) NOT NULL,
+   
+   PRIMARY KEY(vin),
+   FOREIGN KEY (vin) REFERENCES Car(vin)
+   
+
+); 
+
+
+CREATE TABLE manufacturer
+(
+   car nvarchar(30),
+   primary key(car)
+);

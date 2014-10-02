@@ -1,0 +1,15 @@
+pLAYER 1
+A
+S
+D
+W
+Q
+
+
+pLYER 2
+
+UP
+DOWN
+RIGHT
+LEFT
+SPACE

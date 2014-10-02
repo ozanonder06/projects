@@ -1,0 +1,19 @@
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+.jumbotron2 {
+  padding: 5px;
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 1.89;
+  color: inherit;
+  background-color: #CCCCFF;
+}
+
+p.padding
+{
+  padding-right: 10px;
+}

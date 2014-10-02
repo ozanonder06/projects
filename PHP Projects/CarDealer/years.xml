@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Generates the year-made of the car from the 10th letter/digit
+ of the vin number which is represented as ten_pos(10th position) attribute.
+ this file is valid for the car years between 1980-and 2009!!!!!
+-->
+
+<years>
+    
+    <car ten_pos="A">
+        <year>1980</year>
+    </car>
+    <car ten_pos="B">
+        <year>1981</year>
+    </car>
+    <car ten_pos="C">
+        <year>1982</year>
+    </car>
+    <car ten_pos="D">
+        <year>1983</year>
+    </car>
+    <car ten_pos="E">
+        <year>1984</year>
+    </car>
+    <car ten_pos="F">
+        <year>1985</year>
+    </car>
+    <car ten_pos="G">
+        <year>1986</year>
+    </car>
+    <car ten_pos="H">
+        <year>1987</year>
+    </car>
+    <car ten_pos="J">
+        <year>1988</year>
+    </car>
+    <car ten_pos="K">
+        <year>1989</year>
+    </car>
+    <car ten_pos="L">
+        <year>1990</year>
+    </car>
+    <car ten_pos="M">
+        <year>1991</year>
+    </car>
+    <car ten_pos="N">
+        <year>1992</year>
+    </car>
+    <car ten_pos="P">
+        <year>1993</year>
+    </car>
+    <car ten_pos="R">
+        <year>1994</year>
+    </car>
+    <car ten_pos="S">
+        <year>1995</year>
+    </car>
+    <car ten_pos="T">
+        <year>1996</year>
+    </car>
+    <car ten_pos="V">
+        <year>1997</year>
+    </car>
+    <car ten_pos="W">
+        <year>1998</year>
+    </car>
+    <car ten_pos="X">
+        <year>1999</year>
+    </car>
+    <car ten_pos="Y">
+        <year>2000</year>
+    </car>
+    <car ten_pos="1">
+        <year>2001</year>
+    </car>
+    <car ten_pos="2">
+        <year>2002</year>
+    </car>
+    <car ten_pos="3">
+        <year>2003</year>
+    </car>
+    <car ten_pos="4">
+        <year>2004</year>
+    </car>
+    <car ten_pos="5">
+        <year>2005</year>
+    </car>
+    <car ten_pos="6">
+        <year>2006</year>
+    </car>
+    <car ten_pos="7">
+        <year>2007</year>
+    </car>
+    <car ten_pos="8">
+        <year>2008</year>
+    </car>
+    <car ten_pos="9">
+        <year>2009</year>
+    </car>
+    
+</years>
