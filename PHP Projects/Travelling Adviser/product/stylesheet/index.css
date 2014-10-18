@@ -1,0 +1,45 @@
+
+.thumbnail img{
+    height:180px;
+    width:340px;
+}
+.thumbnail{
+    background-color: rgba(255, 255, 255, 0.25);
+    border:0;
+}
+
+.thumbnail:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    border:0;
+}
+
+
+.jumbotron {
+    margin-bottom: 0;
+    background:url("../image/blur.jpg");
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+}
+
+.welcome_phrase{
+    padding-left: 30px;
+}
+
+
+#q{
+    vertical-align: top;
+    padding-left: 45px;
+}
+
+.recomend{
+    padding-left:30px;
+}
+.form-inline .form-group{
+    padding-left: 0px;
+    vertical-align: top;
+}
+
+.navbar{
+    margin-bottom:0px;
+}
+

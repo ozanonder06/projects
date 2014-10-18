@@ -1,0 +1,17 @@
+.upload-area {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border: 1px solid #CACACA;
+    overflow: hidden;
+    padding: 10px 10px 0;
+    margin-bottom: 10px;
+}
+
+.headline{
+    font-size: 20px;
+}
+
+#footer{
+   position: relative;
+   bottom: 0;
+   width: 100%;
+}

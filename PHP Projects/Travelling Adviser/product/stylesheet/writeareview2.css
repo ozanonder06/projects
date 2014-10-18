@@ -1,0 +1,13 @@
+.headline{
+    font-size: 20px;
+}
+
+#footer{
+   position: fixed;
+   bottom:0;
+   width: 100%;
+}
+
+#comments{
+    height: 100px;
+}

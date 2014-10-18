@@ -1,0 +1,41 @@
+.carousel-thumb {
+    height: 70px;
+    width: 100px;
+}
+
+#demo {
+    visibility: visible; 
+    min-width: 0px;
+}
+
+.jCarouselLite {
+    visibility: visible; 
+    overflow: hidden; 
+    position: relative; 
+    z-index: 2; 
+    left: 0px; 
+    width: 300px;
+}
+.jCarouselLite ul {
+    margin: 0px; 
+    padding: 0px; 
+    position: relative; 
+    list-style-type: none; 
+    z-index: 1; 
+    width: 3000px; 
+    left: -510px;
+}
+
+.jCarouselLite li {
+    overflow: hidden; 
+    float: left; 
+    width: 110px; 
+    height: 80px;
+}
+
+.mid img{
+    margin-bottom: 10px;
+    width: 350px;
+    height: 200px;
+    
+}

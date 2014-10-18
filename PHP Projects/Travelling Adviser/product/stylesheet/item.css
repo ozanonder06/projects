@@ -1,0 +1,33 @@
+.img-thumbnail{
+    height: 250px;
+}
+
+.img-member-size{
+    height: 100px;
+    width: 100px;
+}
+
+#map-canvas {
+    height: 200px;
+}
+
+
+.jumbotron {
+    font-size: 20px;
+}
+
+#footer{
+   position: relative;
+   bottom: 0;
+   width: 100%;
+}
+
+.jumbotron {
+    font-size: 16px;
+    padding-bottom: 0;
+    padding-top: 20px;
+}
+
+.jumbotron h2 {
+    
+}

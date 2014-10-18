@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Awayz</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="stylesheet/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles for this page -->
+        <link href="stylesheet/index.css" rel="stylesheet">
+        
+        <link href="stylesheet/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <link href="stylesheet/header.css" rel="stylesheet">
+
+
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                    class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/~f13g02">Awayz Travel Advisor</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+
+
+
+
+                <li><a href="search.php?type=Restaurant">Restaurant</a></li>
+                <li><a href="search.php?type=Hotel">Hotel</a></li>
+                <li><a href="writeareview.php">Write a Review</a></li>
+                <li><a href="additem.php">Add Venue</a></li>
+            </ul>
+
+            <div class="col-lg-3"><form action="search.php" method="get" class="search-head form-search"> 
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control searchbar" name="q" placeholder="City or Venue Name">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div><!-- /input-group -->
+                </form>
+            </div>
+
+
+
+            <ul class="nav navbar-nav navbar-right">
+
+                                    <li><a href="login.php">Login</a></li>
+                    <li><a href="signup.php">Register</a></li>
+                            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+        <div class="jumbotron" id="contents">
+
+            <div id ="q" class="container">
+
+                <span class="welcome_phrase"><h1>Plan your perfect trip</h1></span>
+
+                <form id="searchForm" name="sForm" class="form-search" method ="get" action="search.php">
+                    <div class=""> 
+                        <div class="form-inline" role="form">
+                            <div class="form-group col-xs-6">
+                                <input type="txt"  name="q" class="form-control searchbar" placeholder="City or venue name">
+                            </div>
+                            <!-- "City" Dropdown -->      <div class="form-group">                    
+                                <select id="cityName" class="form-control" name="city" onchange="">
+                                    <option value="">Select City</option>
+                                    <option >San Francisco</option>
+                                    <option >San Jose</option>
+                                    <option >Los Gatos</option>              
+                                </select>                             
+                            </div>
+                            <!-- "Type" Dropdown -->        <div class="form-group">
+                                <select class="form-control" id="typeName" name="type" onchange="">
+                                    <option value="">Select Type</option>
+                                    <option >Restaurant</option>
+                                    <option >Hotel</option>
+                                    <option >Attraction</option>  
+                                    <option >Shopping Center</option>
+                                    <option >Coffee Shop</option>
+                                    <option >Bar</option>
+                                    <option >Other</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-info" type="submit"> Search </button>
+
+                        </div>
+                    </div>     
+                </form>
+            </div>
+
+            <div class="container">
+
+                <div class="recomend"><h3> Recommended Cities to Visit: </h3></div>
+                <div class="container">
+
+                    <!--City One Box--><div class="col-lg-4 col-md-4 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="search.php?q=&city=Los+Gatos" class="thumbnail">  
+                                <img src="image/losGatos.jpg" alt="..." width="300" height="150">
+                            </a>
+
+                            <div class="caption">
+                                <h3 align="center"><strong> Los Gatos, California</strong></h3>
+                                <p class="details" align="center">Los Gatos translated in spanish, means 
+                                    "The Cats", ironically Los Gatos houses 3x more dogs than cats. 
+                                    If your looking for a nice time, Los Gatos is the place to visit
+                                </p>
+                            </div>
+                        </div>
+                    </div>    
+
+                    <!--City two Box--><div class="col-lg-4 col-md-4 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="search.php?q=&city=San+Francisco&type=All+Type" class="thumbnail">
+                                <img src="image/sf.jpg" alt="..." class="" width="300" height="150">
+                            </a>
+
+                            <div class="caption" >
+                                <h3 align="center"> <strong>San Francisco, California</strong></h3>
+                                <p class="details" align="center">San Francisco is home of the golden 
+                                    gate bridge, a world attraction. With so much diversity, SF has 
+                                    some of the best foods, shops, and attractions one can hope for.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--City 3 Box--> <div class="col-lg-4 col-md-4 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="search.php?q=&city=San+Jose&type=All+Type" class="thumbnail">
+                                <img src="image/sanJose.jpg" alt="..." class="" width="300" height="150">
+                            </a>
+
+                            <div class="caption">
+                                <h3 align="center"><strong> San Jose, California</strong></h3>
+                                <p class="details" align="center">Home of the famous SJ Fries. If your looking for some sun, grub, and fun.
+                                    Then come to San Jose where the sun and fun last forever. And where the food
+                                    is nothing but "Fantastico!". 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>  
+            
+        </div>
+
+    <div id="footer" style="background-color: #3C3C3C; height: 60px; width:100%;">
+    <div class="container" style="text-align:center;">
+        <a href="about.php">About</a>
+        <a href="about.php">Contact</a>
+        <a href="about.php">Privacy</a>
+        <br/>
+        <p class="text-muted credit">Fall 2013 SFSU student project--Awayz Copyright</p>
+    </div>
+            <!-- Bootstrap core JavaScript -->
+        <script src="script/jquery.js"></script>
+        <script src="script/bootstrap.min.js"></script>
+        <script src="script/jquery-ui-1.10.3.custom.min.js"></script>
+        <script src="script/searchbar.js"></script>
+</div></body>
+</html>

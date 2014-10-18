@@ -1,0 +1,54 @@
+html, body {
+height: 100%;
+}
+
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#search_form {
+    padding-left: 0;
+}
+.thumbnail{ 
+    max-width:150px; 
+
+}
+
+.pagination{
+    margin:0px;
+    position: absolute;
+    right: 10px;
+    margin-top:-5px;
+}
+
+.pg_count{
+    margin-top: 10px;
+}
+
+
+h4{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.awayz_body {
+    min-height: 100%;
+    height: auto !important;
+    margin-left: 40px;
+    margin-right: 40px;   
+}
+
+.form-group, .left_pane, .recent_comment div {
+    padding-left:0px;
+    padding-right:10px;
+}
+
+.search_description, .recent_comment, .img-descr-row {
+    padding-left:0px;
+    padding-right:0px;
+}
+
+#map-canvas {
+    height: 300px;
+}
