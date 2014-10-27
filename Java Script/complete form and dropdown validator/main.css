@@ -1,0 +1,14 @@
+div.overlay {
+	 width: 500px;
+     height: 500px;
+     background-color: blue;
+     margin-left: auto;
+     margin-right: auto;
+	 position: fixed;
+
+}
+
+p {
+	margin-left: 10%;
+} 
+

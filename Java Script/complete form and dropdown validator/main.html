@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>   
+     <link rel="stylesheet" type="text/css" href="main.css"> 
+	 <script src="inputValidator.js"> </script>	 
+  </head>
+  
+  <body>
+  
+    <script>
+		
+		validator = new InputValidator();
+			
+		function validateForm() {
+
+			var fname = document.getElementById('fname').value;		
+			var lname = document.getElementById('lname').value;	
+			var number = document.getElementById('number').value;	
+			var email = document.getElementById('email').value;	
+			
+			//checks if there is any input field left empty
+			if(fname.length == 0 || lname.length == 0 || number.length == 0 || email.length == 0) {
+				alert('Please fill all the fields!');
+				return false;
+			} 
+	
+			if(!validator.isName(fname) || !validator.isName(lname)) {
+				alert('enter a valid name!');
+				return false;
+			}
+			if(!validator.isPhoneNumber(number)) {
+				alert('enter a valid phone number (###-###-####)!');
+				return false;
+			}
+			if(!validator.isEmail(email)) {		
+				alert('enter a valid e-mail (example@domain.name)');
+				return false;
+			}
+			
+			/**
+			 * correct validation
+			 * remove form1 from overlay and appnd form2 instead
+			 */
+			el1.parentNode.removeChild(el1);			
+			var element = document.getElementById("overlay");;			
+			element.appendChild(el2);	
+		}
+		
+		function validateDropDown() {
+			var d1 = document.getElementById("dd1");
+			var fruit = d1.options[d1.selectedIndex].value;
+			
+			var d2 = document.getElementById("dd2");
+			var gender = d2.options[d2.selectedIndex].value;
+
+			if(fruit==0) {
+				alert("Please select a fruit");
+				return false;
+			}
+			if(gender==0) {
+				alert("Please select a gender");
+				return false;
+			}
+			
+			//validation is successful
+			//remove form2 from layout and append a greeting message
+			el2.parentNode.removeChild(el2);
+			var text = document.createTextNode('THANK YOU!!!');
+			element.appendChild(text);	
+		}
+
+
+	</script>
+	
+	<div id="overlay" class="overlay">
+		<div id="form1">
+			<p><input type="text" id="fname"> First name</p>
+			<p><input type="text" id="lname"> Last name </p>
+			<p><input type="text" id="number"> Phone </p>
+			<p> <input type="text" id="email"> Email</p>
+			<p><button class="submit-button" onclick="validateForm()"> SUBMIT </button></p>
+		</div>
+		
+		<div id="form2">
+			<p> <select id="dd1"> 
+				<option value="0">select</option>
+				<option value="1">apple</option>
+				<option value="2">orange</option>
+			</select> your favourite fruit</p> 
+			<p><select id="dd2">
+				<option value="0">select</option>
+				<option value="1">male</option>
+				<option value="2">female</option>
+			</select>  gender </p> 
+			<p><button class="submit-button" onclick="validateDropDown()"> SUBMIT </button></p>
+		</div>
+	</div>
+	
+	
+	<script>
+		//DOM Objects
+		//initially removes the form2
+	 	var el2 = document.getElementById('form2'); //remove the second section initially
+		var el1 = document.getElementById('form1'); //remove the second section initially
+		var element = document.getElementById("overlay");;
+		el2.parentNode.removeChild(el2);
+	</script>
+  
+  </body>
+
+</html> 
+		  

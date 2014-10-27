@@ -1,0 +1,74 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$font-stack: PT Sans, sans-serif;
+$day: #47D1FF;
+$night: black;
+$item1: url("../images/stitcher copy.png");
+$item2: url("../images/whobert_landscape.png");
+$item3: url("../images/big query copy.png");
+$background-picture: url(../images/buildings.png);
+$portfolio-background-color: #5C5C5C;
+$skyline: url(../images/skyline.png);
+
+// bower:scss
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+:focus {outline: none;}
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: blue;
+  padding: 0.2em 0;
+}
+
+.section {
+  position: relative;
+  margin-bottom: 0px;
+}
+
+div.skyline {
+  @extend .background;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: $skyline;
+  bottom: 0;
+}
+
+div.building {
+  @extend .background;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: $background-picture;
+}
+
+.workButton:hover {
+  background-color:#000;
+  color:#fff;
+}
+
+text.ourWorkText:hover {
+  color:#fff;
+}
+
+.chevron {
+  @extend .message;
+  position: relative;
+  bottom: 0px;
+  height: 10px;
+  padding-left:6px;
+}
+
+.description {
+  font-family: 'Museo-slab', sans-serif;
+  font-weight:300;
+  color: #f0f0f0;
+  font-size: 24px;
+  padding-bottom:23px;
+  text-align: center;
+
+  span.strong {
+    font-weight:700;
+  }
+}

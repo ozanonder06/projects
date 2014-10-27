@@ -1,0 +1,119 @@
+$cloud1: url(../images/weather/cloud1.png);
+$cloud2: url(../images/weather/cloud2.png);
+$cloud3: url(../images/weather/cloud3.png);
+$cloud4: $cloud2;
+$haze: url(../images/weather/haze.png);
+
+@mixin cloud ($width, $height, $image, $name, $top, $duration) {
+  z-index: 1;
+  width: $width;
+  height: $height;
+  position: absolute;
+  background-image: $image;
+  background-repeat: no-repeat;
+  -webkit-animation-play-state: running;
+  -webkit-animation: $name $duration infinite;;   /* Chrome, Safari, Opera */
+  animation: $name $duration infinite;;  /*Standard Syntax*/
+  position: absolute;
+  top: $top;
+}
+
+.weather {
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  position: absolute;
+}
+
+.day {
+  @extend .background;
+  background-image: linear-gradient(115deg, #79b2e3, #d3e0a6);
+}
+
+.night {
+  @extend .background;
+  background-color: black;
+}
+
+.fog {
+  background-color: red;
+}
+
+.rain {
+  background-color: white;
+}
+
+.clear {
+  background-color: yellow;
+}
+
+.cloud1 {
+  @include cloud (100%, 50%, $cloud1, cloud1, 30%, 80s);
+}
+
+.cloud2 {
+  @include cloud (100%, 50%, $cloud2, cloud2, 5%, 65s);
+}
+
+.cloud3 {
+  @include cloud (100%, 50%, $cloud3, cloud3, 5%, 150s);
+}
+
+.cloud4 {
+  @include cloud (100%, 50%, $cloud4, cloud4, 5%, 45s);
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes cloud1 {
+    0%   {left:-45%; top:0px;}
+    100% {left:95%; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes cloud1 {
+   0%  {left:-45%; top:0px;}
+  100% {left:95%; top:0px;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes cloud2 {
+    0%   {left:-20%; top:0px;}
+    100% {left:100%; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes cloud2 {
+   0%   {left:-20%; top:0px;}
+  100% {left:100%; top:0px;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes cloud3 {
+    0%   {left:-100%; top:0px;}
+    100% {left:100%; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes cloud3 {
+   0%   {left:-200%; top:0px;}
+  100% {left:200%; top:0px;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes cloud4 {
+  0%   {left:30%; top:20px; opacity: 0;}
+  50%   {opacity: 1;}
+  100% {left:100%; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes cloud4 {
+  0%   {left:30%; top:0px; opacity: 0;}
+  50%   {opacity: 1;}
+  100% {left:100%; top:0px;}
+}
+
+.haze {
+  @include cloud (100%, 100%, $haze, haze, 0%, 10s);
+  position: absolute;
+}
