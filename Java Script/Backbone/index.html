@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html> 
+  <head> 
+	<!--this import order is important-->
+	<script src="../../library/jquery-1.8.2.min.js"></script>
+	<script src="../../library/underscore.js"></script>
+	<script src="../../library/backbone.js"></script>
+	<script src="index.js"></script>
+		
+  </head>
+
+  <body>
+	<h1> My Tasks </h1>
+	
+	<form id="addTask" action="">
+		<input type="text" placeholder="Your new Task">
+		<input type="submit" value="Add Task"> </input>
+	</form>
+	
+	<div class="tasks">
+		<!--we do not need to add the list item(li) here because
+		backbone dynamically creates it-->
+		<script id="taskTemplate" type="text/template">
+		
+		  <span><%= title %></span>
+		  <button class="edit">Edit</button>
+		  <button class="delete"> Delete</button>
+		  
+		</script>
+	</div>
+  
+  </body>
+
+</html>  
+		  
